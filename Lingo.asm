@@ -284,42 +284,10 @@ lb 	$t8, 0($t8)		# Get letter in current index of random word
 
 beq 	$t8, $zero, END_CHECK_IF_IN # If the null character at the end of the random number is reached, end loop
 
-# Line 290 calls the function which prevents doubles of guessed chars to be printed in a single guess.
-# With great regret, I was unable to implement it sucessfully, however, I have left my attempted
-# implementation in in the hopes of getting partial credit for it. This function starts on line 301.
-# jal	CHECK_IF_SEEN
-
 beq 	$t8, $t3, PRINT_CHECK	# If equal go to label
 addi	$t5, $t5, 1		# Increment index of random word
 
 j	CHECK_IF_IN_LOOP
-
-####################################################################################
-# Checks if the current char has already been mentioned in this guess.
-####################################################################################
-
-#CHECK_IF_SEEN:
-#la	$s3, already_seen	# Beginning index of chars already seen in this guess
-#li	$s4, 0			# Current index of the already seen index
-
-#CHECK_IF_SEEN_LOOP:
-#sll	$s5, $s4, 2
-#add	$s6, $s4, $s3
-#lb	$s7, 0($s6)
-
-#beq	$s7, $zero, DO_PRINT_CHECK
-#beq	$t8, $s7, SKIP_PRINT_CHECK # If this char is already mentioned, skip printing it.
-
-#addi 	$s4, $s4, 1
-#j	CHECK_IF_SEEN_LOOP
-
-#DO_PRINT_CHECK:
-#sb	$s3, 0($s3)		# Add this char to alreafy see and print that it's in the word.
-#jr	$ra
-
-#SKIP_PRINT_CHECK:
-#addi	$t5, $t5, 1		# Increment index of random word
-#j	CHECK_IF_IN_LOOP
 
 ####################################################################################
 # Actually prints that the current user's char is in the word, but not the right 
