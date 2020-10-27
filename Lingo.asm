@@ -1,4 +1,14 @@
-# Lingo Game					J+M+J
+# Lingo Game					                  J+M+J
+#This MIPS program is a game called Lingo, It starts off selecting one of the 10 words, 
+#stored in the data field, at random, displays the first letter of that word, then prompts 
+#the user to enter a guess as to what the word is. The program will tell the user which 
+#letters in their guess are also in the answer, but the wrong place, or which letters in 
+#their guess are in the correct spot of the answer. The user gets 5 guesses to guess the 
+#word, or else they lose. Win or lose, at the end, the game will ask the user if they want 
+#to play again. Entering "y" will restart the game, anything else will kill the program.
+#NOTE) The user can only input lowercase letters in their guesses and only 5 letter words 
+#are permitted.
+
 
 .data
 
