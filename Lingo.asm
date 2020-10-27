@@ -317,7 +317,7 @@ j	COMPLETSLOOP
 
 # END OF COMPLETS FUNCTION
 ENDCOMP:
-jr 	$ra
+jr 	$ra 
 
 
 
